@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Android</string>
+
+    <!--Activity的启动模式-->
+    <string name="jump_to_self">跳转到自己</string>
+    <string name="jump_to_other_page">跳转到其他页面</string>
+    <string name="jump_to_standard_page">Standard(标准模式)</string>
+    <string name="jump_to_single_top_page">SingleTop(栈顶复用模式)</string>
+    <string name="test_standard">标准模式启动的Activity</string>
+    <string name="jump_to_single_task_page">SingleTask(栈内复用模式)</string>
+    <string name="jump_to_single_instance_page">SingleInstance(单例模式)</string>
+    <string name="single_instance">当前页为单任务栈模式</string>
+
+    <!--蓝牙聊天功能相关-->
+    <string name="open_bluetooth">打开蓝牙</string>
+    <string name="search_device">搜素设备</string>
+    <string name="jump_to_blue_tooth_chat_page">跳转到蓝牙聊天页</string>
+    <string name="bluetooth_switch_set">蓝牙开关设置</string>
+    <string name="open_bluetooth_ing">正在开启蓝牙</string>
+    <string name="close_wifi_ing">正在关闭Wifi</string>
+    <string name="sent">发送</string>
+    <string name="android_four_launcher_mode">Activity四大启动模式</string>
+    <string name="bluetooth_chat">蓝牙聊天</string>
+
+    <!--四大组件之服务-->
+    <string name="service">服务(Service)</string>
+    <string name="jump_to_service_page">服务的开关，绑定，解绑</string>
+    <string name="start_service">开启服务</string>
+    <string name="stop_service">停止服务</string>
+    <string name="bind_service">绑定服务</string>
+    <string name="unbind_service">解绑服务</string>
+
+    <!--四大组件之广播-->
+    <string name="broadcastReceive">广播(BroadcastReceive)</string>
+    <string name="jump_to_broadcast_receive_page">监听网络变化，打开wifi，关闭wifi</string>
+
+    <!--开关网络-->
+    <string name="wifi_open">打开wifi</string>
+    <string name="wifi_close">关闭wifi</string>
+    <string name="open_4g">打开4G</string>
+    <string name="close_4g">关闭4G</string>
+    <string name="contentProvider">内容提供者(ContentProvider)</string>
+
+    <!--四大组件之内容提供者-->
+    <string name="read_telephone_contract_and_number">获取手机联系人</string>
+
+    <!--自定义view-->
+    <string name="view_custom">自定义view</string>
+    <string name="custom_views">自定义view合集</string>
+    <string name="pie">饼状图</string>
+    <string name="mi_clock">小米钟表</string>
+
+</resources>

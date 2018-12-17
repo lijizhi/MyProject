@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ljz.myproject">
+
+    <!--蓝牙开发相关的权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!--兼容Android5.0之后不默认申请GPS功能-->
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <!--Android6.0以上还需要打开位置权限，否则蓝牙扫描功能不能使用-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!--联网权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--监听网络连接状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--wifi相关的权限-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+
+    <!--移动网络的状态-->
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--Android6.0及以上获取通讯录权限-->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+
+    <!--读取联系人的权限-->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/robot"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <!--入口-->
+        <activity
+            android:name="com.ljz.myproject.MainActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--Activity的基类-->
+        <activity
+            android:name="com.ljz.myproject.common.BaseActivity"
+            android:launchMode="singleTask"></activity>
+
+        <!--standard启动的Activity-->
+        <activity
+            android:name=".demo.launchMode.ActivityStandard"
+            android:launchMode="standard"></activity>
+
+        <!--singleTop启动的Activity-->
+        <activity
+            android:name=".demo.launchMode.ActivitySingleTop"
+            android:launchMode="singleTop"></activity>
+
+        <!--singleTop辅助页-->
+        <activity android:name=".demo.launchMode.OtherTopActivity" />
+
+        <!--singleTask辅助页-->
+        <activity android:name=".demo.launchMode.OtherTaskActivity" />
+
+        <!--singleTask启动的Activity-->
+        <activity
+            android:name=".demo.launchMode.ActivitySingleTask"
+            android:launchMode="singleTask"/>
+
+        <!--singleInstance启动的Activity-->
+        <activity
+            android:name=".demo.launchMode.ActivitySingleInstance"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="com.ljz.myproject.launchmode.singleinstance" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--蓝牙功能-->
+        <activity
+            android:name=".demo.bluetooth.BluetoothActivity" />
+
+        <!--蓝牙聊天页-->
+        <activity
+            android:name=".demo.bluetooth.ChatActivity" />
+
+        <!--手机联系人页-->
+        <activity android:name=".demo.contentProvider.ContactActivity"/>
+
+        <!--自定义View合集页-->
+        <activity android:name=".demo.customView.CustomViewActivity"/>
+
+        <!--测试发送广播-->
+        <activity android:name=".demo.broadcastReceive.MyBroadcast"
+            android:launchMode="singleInstance" />
+
+        <!--测试service页-->
+        <activity android:name=".demo.service.ServiceActivity"
+            android:launchMode="singleTask"/>
+
+        <!--静态注册广播-->
+        <receiver android:name=".demo.broadcastReceive.MyReceive">
+            <!--targetSdkVersion 升级到 24 后，发现静态注册广播的方式被取消了-->
+            <!--静态注册广播特点：当此App首次启动的时候，会自动实例化该广播，并注册到系统中,并且常驻，不受生命周期影响，缺点耗电，占内存-->
+            <intent-filter>
+                <!--用于接收网络状态改变时发出的广播-->
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!--自定义service-->
+        <service android:name=".demo.service.MyService">
+        </service>
+
+    </application>
+</manifest>

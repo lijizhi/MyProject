@@ -1,0 +1,31 @@
+<resources>
+    <!--Base application theme-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--隐藏标题栏和状态栏-->
+    <style name="AppTheme.NoActionBar">
+            <!-- 隐藏标题栏 -->
+            <item name="windowNoTitle">true</item>
+            <!-- 隐藏状态栏 -->
+            <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--右侧字母索引导航栏-->
+    <declare-styleable name="SideBarView">
+        <attr name="scaleSize" format="integer"/>
+        <attr name="scaleItemCount" format="integer"/>
+        <attr name="scaleWidth" format="dimension"/>
+    </declare-styleable>
+
+    <!--仿小米时钟-->
+    <declare-styleable name="MiClockView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="lightColor" format="color" />
+        <attr name="darkColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,42 @@
+buildscript {
+    
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        google()
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+    }
+}
+
+allprojects {
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        google()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext{
+    compileSdkVersion=26
+    minSdkVersion=16
+    targetSdkVersion=26
+    versionCode=1
+    versionName="1.0"
+    supportLibraryVersion='26.1.0'
+    butterknife='8.8.1'
+    logger='2.2.0'
+    BaseRecyclerViewAdapterHelper='2.9.34'
+    pinyin4j='2.5.0'
+    constraint='1.0.2'
+    junit='4.1.2'
+    runner='0.5'
+    espresso='2.2.2'
+}
